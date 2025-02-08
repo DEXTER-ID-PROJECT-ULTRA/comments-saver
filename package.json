@@ -1,4 +1,4 @@
-bf{
+{
   "name": "comments-api",
   "version": "1.0.0",
   "description": "API to save comments and images to GitHub JSON file",
