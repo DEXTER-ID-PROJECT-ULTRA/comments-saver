@@ -1,14 +1,17 @@
-require('dotenv').config(); // Load environment variables from a .env file
 const express = require('express');
 const axios = require('axios');
+const dotenv = require('dotenv');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Load environment variables from .env file
+dotenv.config();
+
 // GitHub credentials from environment variables
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME.trim(); // Ensure no extra spaces
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const GITHUB_REPO = process.env.GITHUB_REPO;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_FILE_PATH = 'comments.json'; // Path to your file in the repo
+const GITHUB_FILE_PATH = 'comments.json';  // Path to your file in the repo
 
 // Function to update the GitHub JSON file
 async function updateGitHubFile(content) {
